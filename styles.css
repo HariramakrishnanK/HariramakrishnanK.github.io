@@ -3,7 +3,7 @@
 
 
 
-.grabg{
+.graybg{
   background-color: hsl(240, 5%, 30%);
 }
 
@@ -232,6 +232,11 @@ footer i:hover{
     right: 0;
     background-color: black;
     z-index: 10;
+  }
+
+  .group section:nth-of-type(4){
+    box-shadow: 0 0 0 100vmax hsl(240, 5%, 30%);
+    clip-path: inset(0 -100vmax); 
   }
   .intro{
     margin-top: 9rem;
