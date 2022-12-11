@@ -41,6 +41,12 @@ main{
   padding: 3rem 0;
 }
 
+:where(#menu, [for="menu"]){
+  position: absolute;
+  left: -100vw;
+  overflow: hidden;
+}
+
 .navbar ul{
   list-style: none;
   display: flex;
@@ -120,6 +126,10 @@ p{
   margin-bottom: 1.5rem;
 }
 
+.companies > *{
+  flex-basis: min(20%, 120px);
+}
+
 .group{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -140,6 +150,7 @@ p{
 
 .group section .hoverlink{
   cursor: pointer;
+  display: inline-block;
 }
 
 .group section .hoverlink::after{
@@ -187,4 +198,57 @@ footer i{
 footer i:hover{
   cursor: pointer;
   scale: 1.2;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar .btn{
+    display: none;
+  }
+  .navbar{
+    position: fixed;
+    top: 0;
+    left: 1rem;
+    right: 1rem;
+    background-color: black;
+    z-index: 10;
+  }
+  .intro{
+    margin-top: 9rem;
+  }
+  .group{
+    grid-template-columns: 1fr;
+  }
+
+  .group section:nth-of-type(3){
+    padding-bottom: 0;
+  }
+
+  [for="menu"] img{
+    position: fixed;
+    z-index: 20;
+    right: 1rem;
+    cursor: pointer;
+    width: 2.5rem;
+    top: 3rem;
+  }
+
+  #menu:checked ~ ul{
+    right: 0;
+  }
+
+  .navbar ul{
+    position: fixed;
+    right: -100%;
+    top: 0;
+    bottom: 35%;
+    padding-top: 10rem;
+    width: max(50%, 350px);
+    text-align: center;
+    font-size: 2em;
+    gap: 5rem;
+    background-color: #333;
+    flex-direction: column;
+    transition: .2s all linear;
+  }
+
 }
