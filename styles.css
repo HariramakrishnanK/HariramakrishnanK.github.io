@@ -3,9 +3,12 @@
 
 
 
+.grabg{
+  background-color: hsl(240, 5%, 30%);
+}
+
 .group section:nth-of-type(3),
 footer{
-  background-color: hsl(240, 5%, 30%);
   box-shadow: 0 0 0 100vmax hsl(240, 5%, 30%);
   clip-path: inset(0 -100vmax); 
 }
